@@ -60,6 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
               ),
+              Slider(
+                value: _counter.toDouble(),
+                min: -100,
+                max: 100,
+                divisions: 200,
+                label: _counter.toString(),
+                onChanged: (double value) {
+                  setState(() {
+                    _counter = value.round().toInt();
+                  });
+                },
+              )
             ],
           ),
         ),
